@@ -1,7 +1,7 @@
 <template>
     <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
         <div class="logo">
-            <img src="../assets/vue.svg" alt="Vue">
+            <img style="height: 100%; width: 100%;;" src="../assets/logo.svg" alt="Vue">
         </div>
 
         <div class="menu-toggle-wrap">
@@ -70,7 +70,7 @@ aside {
     transition: 0.2s ease-in-out;
 
     .flex {
-        flex: 1 1 0;
+        flex: 1 1 0%;
     }
 
     .logo {
