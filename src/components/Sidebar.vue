@@ -14,11 +14,11 @@
         </div>
         <h3>Menu</h3>
         <div class="menu">
-            <router-link v-if="!$store.state.email" class="button" to="/login">
+            <router-link class="button" to="/login">
                 <span class="material-icons">login</span>
                 <span class="text">Login</span>
             </router-link>
-            <router-link v-if="$store.state.email" class="button" to="/logout">
+            <router-link class="button" to="/logout">
                 <span class="material-icons">logout</span>
                 <span class="text">Logout</span>
             </router-link>
@@ -27,7 +27,7 @@
                 <span class="text">Home</span>
             </router-link>
             <router-link class="button" to="/about">
-                <span class="material-icons">visibility</span>
+                <span class="material-icons">info</span>
                 <span class="text">About Us</span>
             </router-link>
             <router-link class="button" to="/team">
@@ -51,8 +51,6 @@
 </template>
 
 <script setup>
-
-import '../store/index.js';
 import { ref } from 'vue'
 
 
