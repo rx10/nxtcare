@@ -1,7 +1,8 @@
+ 
 <template>
     <aside :class="`${is_expanded ? 'is-expanded' : ''}`">
         <div class="logo">
-            <img style="height: 100%; width: 100%;;" src="../assets/logo.svg" alt="Vue">
+            <span style="font-weight: 800; color: whitesmoke;">NXT</span>
         </div>
 
         <div class="menu-toggle-wrap">
@@ -13,6 +14,14 @@
         </div>
         <h3>Menu</h3>
         <div class="menu">
+            <router-link v-if="!$store.state.email" class="button" to="/login">
+                <span class="material-icons">login</span>
+                <span class="text">Login</span>
+            </router-link>
+            <router-link v-if="$store.state.email" class="button" to="/logout">
+                <span class="material-icons">logout</span>
+                <span class="text">Logout</span>
+            </router-link>
             <router-link class="button" to="/">
                 <span class="material-icons">home</span>
                 <span class="text">Home</span>
@@ -42,7 +51,10 @@
 </template>
 
 <script setup>
+
+import '../store/index.js';
 import { ref } from 'vue'
+
 
 const is_expanded = ref(localStorage.getItem("is_expanded") === "true")
 
